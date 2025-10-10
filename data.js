@@ -1,10 +1,10 @@
 // data.js
 export const personalInfo = {
-  name: "John Doe",
-  initials: "JD",
+  name: "Femi Adedokun",
+  initials: "FA",
   title: "Full Stack Developer",
-  subtitle: "Creative Problem Solver | Tech Enthusiast",
-  description: "Passionate about building beautiful, functional web applications that make a difference. Specializing in React, Next.js, and modern web technologies.",
+  subtitle: "Automation Expert | Creative Problem Solver | Tech Enthusiast ",
+  description: "Full stack developer and automation expert focused on crafting powerful, user-centric web applications. With strong skills in React, Next.js, and backend integrations, I bridge creativity and functionality to deliver seamless digital products that solve real-world challenges.",
   social: {
     github: "https://github.com/yourusername",
     linkedin: "https://linkedin.com/in/yourusername",

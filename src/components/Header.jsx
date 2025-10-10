@@ -24,8 +24,8 @@ export default function Header({
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-            Portfolio
+          <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+            Femi.A
           </div>
           
           {/* Desktop Menu */}
@@ -34,16 +34,15 @@ export default function Header({
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className={`hover:text-purple-400 transition-colors duration-300 ${
+                className={`hover:text-purple-400 transition-colors font-bold duration-100  dark:text-purple-400
+                    text-gray-500 text-x ${
                   activeSection === item.toLowerCase() 
-                    ? 'text-purple-400' 
-                    : isDark ? 'text-gray-300' : 'text-gray-700'
                 }`}
               >
                 {item}
               </button>
             ))}
-            <button
+            {/* <button
               onClick={() => setIsDark(!isDark)}
               className={`p-2 rounded-full transition-all duration-300 ${
                 isDark 
@@ -52,12 +51,12 @@ export default function Header({
               }`}
             >
               {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-purple-600" />}
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <button
+            {/* <button
               onClick={() => setIsDark(!isDark)}
               className={`p-2 rounded-full transition-all duration-300 ${
                 isDark 
@@ -66,7 +65,7 @@ export default function Header({
               }`}
             >
               {isDark ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-purple-600" />}
-            </button>
+            </button> */}
             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

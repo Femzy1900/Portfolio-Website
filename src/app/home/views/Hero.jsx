@@ -28,15 +28,12 @@ export default function Hero({ isDark, scrollToSection }) {
           Hi, I'm <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">{personalInfo.name}</span>
         </h1>
         
-        <p className={`text-xl md:text-2xl mb-8 animate-slide-up ${
-          isDark ? 'text-gray-300' : 'text-gray-700'
-        }`} style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
+        <p className= 'text-xl md:text-2xl mb-8 animate-slide-up dark:text-gray-300 text-gray-700'
+        style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
           {personalInfo.title} | {personalInfo.subtitle}
         </p>
         
-        <p className={`text-lg mb-12 max-w-2xl mx-auto animate-slide-up ${
-          isDark ? 'text-gray-400' : 'text-gray-600'
-        }`} style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
+        <p className='text-lg mb-12 max-w-2xl mx-auto animate-slide-up dark:text-white text-gray-600' style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
           {personalInfo.description}
         </p>
         
