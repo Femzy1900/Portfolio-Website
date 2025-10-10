@@ -4,9 +4,7 @@ import { testimonials } from '../../../../data';
 
 export function TestimonialsSection({ isDark }) {
   return (
-    <section id="testimonials" className={`py-20 px-4 ${
-      isDark ? 'bg-slate-900/50' : 'bg-white/50'
-    }`}>
+    <section id="testimonials" className='py-20 px-4 dark:bg-white/10'>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           Testimonials
@@ -34,7 +32,7 @@ export function TestimonialsSection({ isDark }) {
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold">{testimonial.name}</div>
+                  <div className="font-semibold dark:text-black">{testimonial.name}</div>
                   <div className={`text-sm ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}>

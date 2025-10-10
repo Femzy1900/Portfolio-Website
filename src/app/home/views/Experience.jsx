@@ -30,7 +30,7 @@ export function ExperienceSection({ isDark }) {
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
+                  <h3 className="text-2xl font-bold dark:text-black mb-2">{exp.role}</h3>
                   <div className={`flex flex-wrap gap-4 mb-4 ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}>

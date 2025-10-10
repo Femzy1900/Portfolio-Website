@@ -26,11 +26,7 @@ export function SkillsSection({ isDark }) {
                 {skillSet.items.map((skill, i) => (
                   <span 
                     key={i}
-                    className={`px-4 py-2 rounded-full text-sm transition-colors duration-300 cursor-default ${
-                      isDark
-                        ? 'bg-slate-800/50 hover:bg-purple-600/30'
-                        : 'bg-purple-100 hover:bg-purple-200'
-                    }`}
+                    className='px-4 py-2 rounded-full text-sm transition-colors duration-300 cursor-default   dark:hover:bg-purple-600/70 dark:bg-slate-600/70 bg-purple-100 hover:bg-purple-300'
                   >
                     {skill}
                   </span>

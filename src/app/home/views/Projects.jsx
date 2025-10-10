@@ -4,9 +4,7 @@ import { projects } from '../../../../data';
 
 export function Projects({ isDark }) {
   return (
-    <section id="projects" className={`py-20 px-4 ${
-      isDark ? 'bg-slate-900/50' : 'bg-white/50'
-    }`}>
+    <section id="projects" className='py-20 px-4  dark:bg-white/10'>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           Featured Projects
@@ -30,7 +28,7 @@ export function Projects({ isDark }) {
                   </a>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 dark:text-black">{project.title}</h3>
                 <p className={isDark ? 'text-gray-400 mb-6' : 'text-gray-600 mb-6'}>
                   {project.description}
                 </p>
