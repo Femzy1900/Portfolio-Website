@@ -4,11 +4,11 @@ export const personalInfo = {
   initials: "FA",
   title: "Full Stack Developer",
   subtitle: "Automation Expert | Creative Problem Solver | Tech Enthusiast ",
-  description: "Full stack developer and automation expert focused on crafting powerful, user-centric web applications. With strong skills in React, Next.js, and backend integrations, I bridge creativity and functionality to deliver seamless digital products that solve real-world challenges.",
+  description: "As a Full Stack Developer and Automation Expert, I’m passionate about building smart, efficient, and visually engaging web applications. I thrive on solving complex problems creatively — turning ideas into seamless, user-focused digital experiences. With a deep enthusiasm for technology and innovation, I blend technical precision with creativity to craft solutions that make a real impact.",
   social: {
-    github: "https://github.com/yourusername",
+    github: "https://github.com/Femzy1900",
     linkedin: "https://linkedin.com/in/yourusername",
-    email: "mailto:your.email@example.com"
+    email: "mailto:adedokunfemi14@gmail.com"
   }
 };
 
@@ -174,21 +174,21 @@ export const projects = [
 export const skills = [
   {
     category: "Frontend",
-    items: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "Redux"]
+    items: ["React", "HTML", "CSS", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "Redux"]
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"]
+    items: ["Node.js", "Express", "Python", , "MongoDB",  "RESTful APIs", "GraphQL", "JWT", "Nodemailer"]
   },
   {
-    category: "Tools",
-    items: ["Git", "Docker", "AWS", "Vercel", "Figma", "Jest"]
+    category: "CMS Builders and Tools",
+    items: ["Git", "Docker", "AWS", "Vercel", "Figma", "Jest", "Make.com", "Postman", "Firebase", "Wordpress", "N8N"]
   }
 ];
 
 export const experience = [
   {
-    role: "Senior Frontend Developer",
+    role: " Frontend Developer",
     company: "Tech Innovations Inc.",
     period: "2022 - Present",
     description: "Leading frontend development for enterprise applications, mentoring junior developers, and implementing modern React architectures."
@@ -209,8 +209,8 @@ export const experience = [
 
 export const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Product Manager at Tech Co.",
+    name: "Aaron Smith",
+    role: "Co-founder at MPP Academy",
     text: "An exceptional developer who consistently delivers high-quality work. Their attention to detail and problem-solving skills are outstanding.",
     avatar: "SJ"
   },
@@ -230,14 +230,16 @@ export const testimonials = [
 
 export const about = {
   stats: [
-    { value: "50+", label: "Projects Completed" },
-    { value: "30+", label: "Happy Clients" },
-    { value: "5+", label: "Years Experience" },
-    { value: "15+", label: "Tech Stacks" }
+    { value: "29+", label: "Projects Completed" },
+    { value: "15+", label: "Happy Clients" },
+    { value: "4+", label: "Years Experience" },
+    { value: "12+", label: "Tech Stacks" }
   ],
   paragraphs: [
-    "I'm a passionate full-stack developer with over 5 years of experience creating innovative web solutions. My journey in tech started with a curiosity about how things work, which evolved into a career I absolutely love.",
-    "I specialize in building scalable, performant applications using modern technologies like React, Next.js, and Node.js. I believe in writing clean, maintainable code and creating user experiences that delight.",
-    "When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring the latest tech trends. I'm always eager to learn and take on new challenges."
+    "I'm a passionate full-stack developer with over five years of hands-on experience designing and building modern web applications. My journey in technology began with simple curiosity — wanting to understand how things work — and has grown into a career driven by creativity, problem-solving, and continuous learning.",
+
+    "I specialize in developing scalable, high-performance applications using technologies like React, Next.js, and Node.js. I’m dedicated to writing clean, efficient, and maintainable code, with a strong focus on delivering seamless user experiences and reliable solutions.",
+
+    "Outside of coding, I enjoy contributing to open-source projects, writing about technology, and exploring new trends in the ever-evolving world of web development. I’m always looking for opportunities to grow, collaborate, and create meaningful digital experiences."
   ]
 };
