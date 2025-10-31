@@ -1,23 +1,22 @@
-import React from 'react'
-import Hero from './views/Hero'
-import About from './views/About'
-import { SkillsSection } from './views/Skills'
-import { Projects } from './views/Projects'
-import { ExperienceSection } from './views/Experience'
-import { TestimonialsSection } from './views/Testimonial'  
+// app/HomeClient.jsx
+"use client";
 
-const HomeClient = () => {
-  return (
-    <div className=''>
-        
-        <Hero />
-        <About />
-        <SkillsSection />
-        <Projects />
-        <ExperienceSection />
-        <TestimonialsSection />
-    </div>
-  )
-}
+import Hero from "./views/Hero";
+import About from "./views/About";
+import { SkillsSection } from "./views/Skills";
+import { Projects } from "./views/Projects";
+import { ExperienceSection } from "./views/Experience";
+import { TestimonialsSection } from "./views/Testimonial";
 
-export default HomeClient
+const HomeClient = () => (
+  <main className="pt-20">
+    <section id="home"><Hero /></section>
+    <section id="about"><About /></section>
+    <section id="skills"><SkillsSection /></section>
+    <section id="projects"><Projects /></section>
+    <section id="experience"><ExperienceSection /></section>
+    <section id="testimonials"><TestimonialsSection /></section>
+  </main>
+);
+
+export default HomeClient;
