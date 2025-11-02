@@ -168,6 +168,45 @@ export const projects = [
     outcome: "Published on App Store and Play Store with 1000+ downloads and 4.5-star rating",
     teamSize: 5,
     role: "Mobile Developer"
+  },
+   {
+    id: "CDSS",
+    title: "Healthcare Clinical Decision Support System",
+    description: "Mobile-first fitness tracking application with workout plans and progress visualization.",
+    shortDescription: "Comprehensive fitness and workout tracking app",
+    tech: ["React Native", "Redux", "Firebase", "D3.js"],
+    link: "https://cdss-livid.vercel.app/",
+    github: "#",
+    featured: true,
+    status: "Completed",
+    duration: "3 months",
+    category: "Web App",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600"
+    ],
+    features: [
+      "Custom workout plans",
+      "Progress tracking and visualization",
+      "Nutrition logging",
+      "Exercise library with videos",
+      "Goal setting and achievements",
+      "Social features for motivation"
+    ],
+    challenges: [
+      "Optimizing performance on low-end devices",
+      "Creating engaging data visualizations",
+      "Implementing offline functionality"
+    ],
+    solutions: [
+      "Used React Native performance optimization techniques",
+      "Implemented custom D3.js charts with minimal re-renders",
+      "Added local storage with sync when online"
+    ],
+    outcome: "Published on App Store and Play Store with 1000+ downloads and 4.5-star rating",
+    teamSize: 5,
+    role: "Frontend Developer"
   }
 ];
 
