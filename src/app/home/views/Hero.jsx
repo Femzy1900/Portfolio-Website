@@ -92,7 +92,7 @@ export default function Hero({ isDark }) {
           <button
             className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 text-white"
           >
-            <a href="https://docs.google.com/document/d/1kwQQ7MTrcaMeW81Y5Pd7Ey0caUU_KwHeWRPFizwOA0c/edit?usp=drive_link">Download My Resume</a>
+            <a href="/resume.pdf" download>Download My Resume</a>
           </button>
         </div>
 
