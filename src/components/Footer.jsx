@@ -33,7 +33,7 @@ export default function Footer({ isDark }) {
         </div>
         
         <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>
-          © 2025 {personalInfo.name}. Built with Next.js & Tailwind CSS
+          © 2025 {personalInfo.name}.
         </p>
       </div>
     </footer>

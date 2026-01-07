@@ -311,17 +311,17 @@ export const experience = [
   },
   {
     role: "Full Stack Developer",
-    company: "Digital Solutions Co.",
-    period: "2020 - 2022",
+    company: "Fernheil Praxis",
+    period: "August 2025",
     description:
-      "Built scalable web applications using MERN stack, optimized performance, and collaborated with cross-functional teams.",
+      "Built scalable web applications using React, Nodejs and Firebase , optimized performance, and collaborated with cross-functional teams.",
   },
   {
-    role: "Junior Developer",
-    company: "StartUp Labs",
+    role: "Automation Developer",
+    company: "MPP Academy, Permasize AI Forge",
     period: "2019 - 2020",
     description:
-      "Developed responsive web interfaces, implemented RESTful APIs, and participated in agile development processes.",
+      "Designed and implemented workflow automations, integrated APIs, and optimized business processes to improve efficiency.",
   },
 ];
 
