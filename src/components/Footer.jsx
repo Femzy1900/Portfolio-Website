@@ -5,11 +5,9 @@ import { Mail } from 'lucide-react';
 import { personalInfo } from '../../data';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-export default function Footer({ isDark }) {
+export default function Footer() {
   return (
-    <footer className={`py-12 px-4 border-t ${
-      isDark ? 'border-purple-500/20' : 'border-purple-300/50'
-    }`}>
+    <footer className="py-12 px-4 border-t border-purple-300/50 dark:border-purple-500/20">
       <div className="max-w-6xl mx-auto text-center">
         <div className="flex gap-6 justify-center mb-6">
           <a 
@@ -32,7 +30,7 @@ export default function Footer({ isDark }) {
           </a>
         </div>
         
-        <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>
+        <p className="text-gray-600 dark:text-gray-400">
           © 2025 {personalInfo.name}.
         </p>
       </div>

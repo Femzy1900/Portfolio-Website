@@ -2,7 +2,7 @@
 import { MessageSquare } from 'lucide-react';
 import { testimonials } from '../../../../data';
 
-export function TestimonialsSection({ isDark }) {
+export function TestimonialsSection() {
   return (
     <section id="testimonials" className='py-20 px-4 dark:bg-white/10'>
       <div className="max-w-6xl mx-auto">
@@ -14,16 +14,10 @@ export function TestimonialsSection({ isDark }) {
           {testimonials.map((testimonial, idx) => (
             <div 
               key={idx}
-              className={`p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 ${
-                isDark
-                  ? 'bg-gradient-to-br from-purple-900/30 to-slate-900/30 border-purple-500/20 hover:border-purple-500/50'
-                  : 'bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400'
-              }`}
+              className="p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 dark:from-purple-900/30 dark:to-slate-900/30 dark:border-purple-500/20 dark:hover:border-purple-500/50"
             >
               <MessageSquare className="text-purple-400 mb-4" size={32} />
-              <p className={`mb-6 italic ${
-                isDark ? 'text-gray-300' : 'text-gray-700'
-              }`}>
+              <p className="mb-6 italic text-gray-700 dark:text-gray-300">
                 "{testimonial.text}"
               </p>
               
@@ -33,9 +27,7 @@ export function TestimonialsSection({ isDark }) {
                 </div>
                 <div>
                   <div className="font-semibold dark:text-white">{testimonial.name}</div>
-                  <div className={`text-sm ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
                     {testimonial.role}
                   </div>
                 </div>

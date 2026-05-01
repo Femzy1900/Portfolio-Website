@@ -5,7 +5,7 @@ import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { projects } from "../../../../data";
 
-export function Projects({ isDark }) {
+export function Projects() {
   return (
     <section id="projects" className="py-20 px-4  dark:bg-white/10">
       <div className="max-w-6xl mx-auto">
@@ -18,12 +18,18 @@ export function Projects({ isDark }) {
             <Link
               href={`/projects/${project.id}`}
               key={idx}
-              className={`block rounded-2xl overflow-hidden backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 cursor-pointer ${
-                isDark
-                  ? "bg-gradient-to-br from-purple-900/80 to-slate-900/50 border-purple-500/20 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20"
-                  : "bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-200"
-              }`}
+              className="group block rounded-2xl overflow-hidden backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 cursor-pointer bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-200 dark:from-purple-900/80 dark:to-slate-900/50 dark:border-purple-500/20 dark:hover:border-purple-500/50 dark:hover:shadow-purple-500/20"
             >
+              <div className="w-full h-48 overflow-hidden relative border-b border-purple-200 dark:border-purple-500/20">
+                <img 
+                  src={project.images[0] || '/api/placeholder/800/600'} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white font-semibold flex items-center gap-2">View Case Study <ExternalLink size={16} /></span>
+                </div>
+              </div>
               <div className="p-8">
                 <div className="flex items-start justify-between mb-4">
                   <Code className="text-purple-400" size={32} />
@@ -43,11 +49,7 @@ export function Projects({ isDark }) {
                 <h3 className="text-2xl font-bold mb-3 dark:text-white text-gray-900">
                   {project.title}
                 </h3>
-                <p
-                  className={
-                    isDark ? "text-gray-400 mb-6" : "text-gray-600 mb-6"
-                  }
-                >
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   {project.description}
                 </p>
 
@@ -55,11 +57,7 @@ export function Projects({ isDark }) {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className={`px-3 py-1 rounded-full text-xs ${
-                        isDark
-                          ? "bg-purple-600/20 text-purple-300"
-                          : "bg-purple-200 text-purple-700"
-                      }`}
+                      className="px-3 py-1 rounded-full text-xs bg-purple-200 text-purple-700 dark:bg-purple-600/20 dark:text-purple-300"
                     >
                       {tech}
                     </span>
@@ -68,9 +66,7 @@ export function Projects({ isDark }) {
 
                 <div className="flex items-center justify-between mt-6 pt-4 border-t border-purple-500/20">
                   <span
-                    className={`text-sm ${
-                      isDark ? "text-gray-400" : "text-gray-600"
-                    }`}
+                    className="text-sm text-gray-600 dark:text-gray-400"
                   >
                     {project.category}
                   </span>

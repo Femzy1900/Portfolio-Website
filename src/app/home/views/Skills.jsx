@@ -3,7 +3,7 @@
 
 import { skills } from '../../../../data';
 
-export function SkillsSection({ isDark }) {
+export function SkillsSection() {
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -15,18 +15,14 @@ export function SkillsSection({ isDark }) {
           {skills.map((skillSet, idx) => (
             <div 
               key={idx}
-              className={`p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 ${
-                isDark
-                  ? 'bg-gradient-to-br from-purple-900/30 to-slate-900/30 border-purple-500/20 hover:border-purple-500/50'
-                  : 'bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400'
-              }`}
+              className="p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 dark:from-purple-900/30 dark:to-slate-900/30 dark:border-purple-500/20 dark:hover:border-purple-500/50"
             >
               <h3 className="text-2xl font-bold mb-6 text-purple-400">{skillSet.category}</h3>
               <div className="flex flex-wrap gap-3">
                 {skillSet.items.map((skill, i) => (
                   <span 
                     key={i}
-                    className='px-4 py-2 border-3 rounded-full text-sm transition-colors duration-300 cursor-default   dark:hover:bg-purple-600/70 dark:bg-slate-600/70 bg-purple-100 hover:bg-purple-300'
+                    className='px-4 py-2 border-3 rounded-full text-sm transition-all duration-300 cursor-default hover:-translate-y-1 hover:shadow-md dark:hover:bg-purple-600/70 dark:bg-slate-600/70 bg-purple-100 hover:bg-purple-300'
                   >
                     {skill}
                   </span>

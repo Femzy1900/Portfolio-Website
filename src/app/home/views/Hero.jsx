@@ -1,11 +1,11 @@
 // src/components/sections/HeroSection.jsx
 "use client";
 
-import { Mail } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 import { personalInfo } from "../../../../data";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function Hero({ isDark }) {
+export default function Hero() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -20,21 +20,17 @@ export default function Hero({ isDark }) {
     >
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className={`absolute w-96 h-96 rounded-full blur-3xl -top-20 -left-20 animate-pulse ${
-            isDark ? "bg-purple-600/20" : "bg-purple-400/30"
-          }`}
+          className="absolute w-96 h-96 rounded-full blur-3xl -top-20 -left-20 animate-pulse bg-purple-400/30 dark:bg-purple-600/20"
         ></div>
         <div
-          className={`absolute w-96 h-96 rounded-full blur-3xl -bottom-20 -right-20 animate-pulse ${
-            isDark ? "bg-pink-600/20" : "bg-pink-400/30"
-          }`}
+          className="absolute w-96 h-96 rounded-full blur-3xl -bottom-20 -right-20 animate-pulse bg-pink-400/30 dark:bg-pink-600/20"
           style={{ animationDelay: "1s" }}
         ></div>
       </div>
 
       <div className="text-center z-10 max-w-4xl mx-auto">
         <div className="mb-8 animate-fade-in">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-4xl font-bold shadow-2xl transform hover:scale-110 transition-transform duration-300 text-white">
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-4xl font-bold shadow-2xl shadow-purple-500/40 transform hover:scale-110 transition-transform duration-300 text-white border-4 border-white dark:border-slate-800">
             {personalInfo.initials}
           </div>
         </div>
@@ -91,8 +87,9 @@ export default function Hero({ isDark }) {
           </button>
           <a
             href="/resume.pdf" download
-            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 text-white inline-block"
+            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 text-white flex items-center gap-2"
           >
+            <Download size={20} />
             Download My Resume
           </a>
         </div>

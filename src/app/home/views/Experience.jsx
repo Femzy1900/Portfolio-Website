@@ -4,7 +4,7 @@
 import { Briefcase } from 'lucide-react';
 import { experience } from '../../../../data';
 
-export function ExperienceSection({ isDark }) {
+export function ExperienceSection() {
   return (
     <section id="experience" className="py-6 px-4">
       <div className="max-w-4xl mx-auto">
@@ -16,29 +16,21 @@ export function ExperienceSection({ isDark }) {
           {experience.map((exp, idx) => (
             <div 
               key={idx}
-              className={`p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 ${
-                isDark
-                  ? 'bg-gradient-to-br from-purple-900/30 to-slate-900/30 border-purple-500/20 hover:border-purple-500/50'
-                  : 'bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400'
-              }`}
+              className="p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 dark:from-purple-900/30 dark:to-slate-900/30 dark:border-purple-500/20 dark:hover:border-purple-500/50"
             >
               <div className="flex items-start gap-4">
-                <div className={`p-3 rounded-lg ${
-                  isDark ? 'bg-purple-600/20' : 'bg-purple-200'
-                }`}>
+                <div className="p-3 rounded-lg bg-purple-200 dark:bg-purple-600/20">
                   <Briefcase className="text-purple-400" size={24} />
                 </div>
                 
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold dark:text-white mb-2">{exp.role}</h3>
-                  <div className={`flex flex-wrap gap-4 mb-4 ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
+                  <div className="flex flex-wrap gap-4 mb-4 text-gray-600 dark:text-gray-400">
                     <span>{exp.company}</span>
                     <span>•</span>
                     <span>{exp.period}</span>
                   </div>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>
+                  <p className="text-gray-700 dark:text-gray-300">
                     {exp.description}
                   </p>
                 </div>
