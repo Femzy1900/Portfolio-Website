@@ -10,7 +10,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const navItems = ["Home", "About", "Skills", "Projects", "Experience", "Testimonials"];
+  const navItems = ["Home", "About", "Skills", "Projects", "Experience"];
 
   const scrollToSection = (id) => {
     setIsMenuOpen(false);
@@ -74,7 +74,7 @@ export default function Header() {
               className={`font-semibold transition-colors ${
                 activeSection === item.toLowerCase()
                   ? "text-purple-400"
-                  : "text-gray-600 hover:text-purple-400"
+                  : "text-gray-600 dark:text-gray-300 hover:text-purple-400 dark:hover:text-purple-400"
               }`}
             >
               {item}
@@ -84,7 +84,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="dark:text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -92,12 +92,12 @@ export default function Header() {
 
       {/* Mobile Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md">
+        <div className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-purple-200 dark:border-purple-500/20">
           {navItems.map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="block w-full text-left px-4 py-2 hover:text-purple-400"
+              className="block w-full text-left px-4 py-3 text-gray-800 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-400"
             >
               {item}
             </button>
