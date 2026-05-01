@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { 
   ArrowLeft, 
   ExternalLink, 
@@ -18,7 +19,6 @@ import { projects } from '../../../../data';
 
 export default function ProjectDetails() {
   const params = useParams();
-  const router = useRouter();
   const [activeImage, setActiveImage] = useState(0);
   
   const project = projects.find(p => p.id === params.id);
@@ -28,12 +28,12 @@ export default function ProjectDetails() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <button
-            onClick={() => router.push('/')}
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-white"
+          <Link
+            href="/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-white"
           >
             Back to Home
-          </button>
+          </Link>
         </div>
       </div>
     );
@@ -43,13 +43,13 @@ export default function ProjectDetails() {
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Back Button */}
-        <button
-          onClick={() => router.push('/')}
-          className="flex items-center gap-2 mb-8 text-purple-400 hover:text-purple-300 transition-colors"
+        <Link
+          href="/#projects"
+          className="inline-flex items-center gap-2 mb-8 text-purple-400 hover:text-purple-300 transition-colors"
         >
           <ArrowLeft size={20} />
           <span>Back to Projects</span>
-        </button>
+        </Link>
 
         {/* Project Header */}
         <div className="mb-12">
@@ -241,12 +241,12 @@ export default function ProjectDetails() {
         <div className="mt-16 pt-8 border-t border-purple-500/20">
           <h3 className="text-2xl font-bold mb-6 text-center">View More Projects</h3>
           <div className="flex justify-center gap-4">
-            <button
-              onClick={() => router.push('/#projects')}
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-white"
+            <Link
+              href="/#projects"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-white"
             >
               All Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>

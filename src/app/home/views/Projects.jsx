@@ -2,16 +2,10 @@
 "use client";
 
 import { Code, ExternalLink } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { projects } from "../../../../data";
 
 export function Projects({ isDark }) {
-  const router = useRouter();
-
-  const handleProjectClick = (projectId) => {
-    router.push(`/projects/${projectId}`);
-  };
-
   return (
     <section id="projects" className="py-20 px-4  dark:bg-white/10">
       <div className="max-w-6xl mx-auto">
@@ -21,10 +15,10 @@ export function Projects({ isDark }) {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div
+            <Link
+              href={`/projects/${project.id}`}
               key={idx}
-              onClick={() => handleProjectClick(project.id)}
-              className={`rounded-2xl overflow-hidden backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 cursor-pointer ${
+              className={`block rounded-2xl overflow-hidden backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 cursor-pointer ${
                 isDark
                   ? "bg-gradient-to-br from-purple-900/80 to-slate-900/50 border-purple-500/20 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/20"
                   : "bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-200"
@@ -46,7 +40,7 @@ export function Projects({ isDark }) {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-3 dark:text-gray-900 text-gray-900">
+                <h3 className="text-2xl font-bold mb-3 dark:text-white text-gray-900">
                   {project.title}
                 </h3>
                 <p
@@ -85,7 +79,7 @@ export function Projects({ isDark }) {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -89,11 +89,12 @@ export default function Hero({ isDark }) {
           >
             About Me
           </button>
-          <button
-            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 text-white"
+          <a
+            href="/resume.pdf" download
+            className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 text-white inline-block"
           >
-            <a href="/resume.pdf" download>Download My Resume</a>
-          </button>
+            Download My Resume
+          </a>
         </div>
 
         <div

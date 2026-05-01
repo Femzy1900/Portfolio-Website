@@ -1,19 +1,26 @@
 "use client";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrollY, setScrollY] = useState(0);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const navItems = ["Home", "About", "Skills", "Projects", "Experience", "Testimonials"];
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsMenuOpen(false);
+    setIsMenuOpen(false);
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -24,8 +31,12 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
     const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
       let current = "";
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -34,11 +45,12 @@ export default function Header() {
           current = section.getAttribute("id");
         }
       });
-      setActiveSection(current);
+      if (current) setActiveSection(current);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <nav

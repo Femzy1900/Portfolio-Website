@@ -32,7 +32,7 @@ export function TestimonialsSection({ isDark }) {
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold dark:text-black">{testimonial.name}</div>
+                  <div className="font-semibold dark:text-white">{testimonial.name}</div>
                   <div className={`text-sm ${
                     isDark ? 'text-gray-400' : 'text-gray-600'
                   }`}>

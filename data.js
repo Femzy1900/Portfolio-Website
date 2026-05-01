@@ -275,7 +275,6 @@ export const skills = [
       "Node.js",
       "Express",
       "Python",
-      ,
       "MongoDB",
       "RESTful APIs",
       "GraphQL",
