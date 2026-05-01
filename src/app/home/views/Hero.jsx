@@ -4,6 +4,7 @@
 import { Mail, Download } from "lucide-react";
 import { personalInfo } from "../../../../data";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const scrollToSection = (sectionId) => {
@@ -29,48 +30,52 @@ export default function Hero() {
       </div>
 
       <div className="text-center z-10 max-w-4xl mx-auto">
-        <div className="mb-8 animate-fade-in">
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 100, duration: 0.8 }}
+          className="mb-8"
+        >
           <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-4xl font-bold shadow-2xl shadow-purple-500/40 transform hover:scale-110 transition-transform duration-300 text-white border-4 border-white dark:border-slate-800">
             {personalInfo.initials}
           </div>
-        </div>
+        </motion.div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+        <motion.h1 
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-5xl md:text-7xl font-bold mb-6"
+        >
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
             {personalInfo.name}
           </span>
-        </h1>
+        </motion.h1>
 
-        <p
-          className="text-xl md:text-2xl mb-8 animate-slide-up dark:text-gray-300 text-gray-700"
-          style={{
-            animationDelay: "0.2s",
-            opacity: 0,
-            animationFillMode: "forwards",
-          }}
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-xl md:text-2xl mb-8 dark:text-gray-300 text-gray-700"
         >
           {personalInfo.title} | {personalInfo.subtitle}
-        </p>
+        </motion.p>
 
-        <p
-          className="text-lg mb-12 max-w-2xl mx-auto animate-slide-up dark:text-white text-gray-600"
-          style={{
-            animationDelay: "0.3s",
-            opacity: 0,
-            animationFillMode: "forwards",
-          }}
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-lg mb-12 max-w-2xl mx-auto dark:text-white text-gray-600"
         >
           {personalInfo.description}
-        </p>
+        </motion.p>
 
-        <div
-          className="flex gap-4 justify-center animate-slide-up"
-          style={{
-            animationDelay: "0.5s",
-            opacity: 0,
-            animationFillMode: "forwards",
-          }}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="flex gap-4 justify-center"
         >
           <button
             onClick={() => scrollToSection("projects")}
@@ -92,15 +97,13 @@ export default function Hero() {
             <Download size={20} />
             Download My Resume
           </a>
-        </div>
+        </motion.div>
 
-        <div
-          className="flex gap-6 justify-center mt-10 animate-slide-up"
-          style={{
-            animationDelay: "0.7s",
-            opacity: 0,
-            animationFillMode: "forwards",
-          }}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="flex gap-6 justify-center mt-10"
         >
           <a
             href={personalInfo.social.github}
@@ -120,7 +123,7 @@ export default function Hero() {
           >
             <Mail size={28} />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

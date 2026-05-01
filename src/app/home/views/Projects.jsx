@@ -4,8 +4,12 @@
 import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { projects } from "../../../../data";
+import { motion } from "framer-motion";
 
 export function Projects() {
+  const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.2 } } };
+  const item = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
+
   return (
     <section id="projects" className="py-20 px-4  dark:bg-white/10">
       <div className="max-w-6xl mx-auto">
@@ -13,11 +17,17 @@ export function Projects() {
           Featured Projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 gap-8"
+        >
           {projects.map((project, idx) => (
-            <Link
-              href={`/projects/${project.id}`}
-              key={idx}
+            <motion.div variants={item} key={idx}>
+              <Link
+                href={`/projects/${project.id}`}
               className="group block rounded-2xl overflow-hidden backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 cursor-pointer bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 hover:shadow-2xl hover:shadow-purple-200 dark:from-purple-900/80 dark:to-slate-900/50 dark:border-purple-500/20 dark:hover:border-purple-500/50 dark:hover:shadow-purple-500/20"
             >
               <div className="w-full h-48 overflow-hidden relative border-b border-purple-200 dark:border-purple-500/20">
@@ -75,9 +85,10 @@ export function Projects() {
                   </span>
                 </div>
               </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

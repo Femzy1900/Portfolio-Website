@@ -2,8 +2,12 @@
 'use client';
 
 import { skills } from '../../../../data';
+import { motion } from 'framer-motion';
 
 export function SkillsSection() {
+  const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } };
+  const item = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
+
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -11,9 +15,16 @@ export function SkillsSection() {
           Skills & Technologies
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {skills.map((skillSet, idx) => (
-            <div 
+            <motion.div 
+              variants={item}
               key={idx}
               className="p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 transform hover:scale-105 bg-gradient-to-br from-purple-50 to-white border-purple-300/50 hover:border-purple-400 dark:from-purple-900/30 dark:to-slate-900/30 dark:border-purple-500/20 dark:hover:border-purple-500/50"
             >
@@ -28,9 +39,9 @@ export function SkillsSection() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
